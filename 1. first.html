@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachable Machine with Webcam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="control-icon" id="controlButton">
+        <div class="pause-container">
+            <div class="pause-bar"></div>
+            <div class="pause-bar"></div>
+        </div>
+        <div class="play-container" style="display: none;">
+            <img id="play-img" src="play.png">
+        </div>
+    </div>
+
+    <div id="logo">
+        <a href="index.html">
+            <img src="a-live.svg" alt="Logo">
+        </a>
+    </div>
+
+    <div class="top-center-container">
+        <div class="step-container">
+            <img src="step_images/s1.png">
+            <div class="steps">
+                <div id="step1">전원선</div>
+                <div id="step2">접지선</div>
+                <div id="step3">IC Chip</div>
+                <div id="step4">능동소자</div>
+                <div id="step5">컨덴서</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid-container">
+        <div class="item item1" id="left-panel">
+            <img src="1. first/first-quiz.jpg" alt="quiz Image" id="quiz-image">
+        </div>
+        <div class="item item2">
+            <img src="" alt="explain img">
+        </div>
+        <div class="item item3" id="right-panel">
+            <div id="webcam-container"></div>
+        </div>
+    </div>
+
+    <div id="label-container"></div>
+
+    <div class="progress-container">
+        <h3>회로 완성도</h3>
+        <div class="progress-bar">
+          <div class="progress" id="cir-progress"></div>
+        </div>
+      </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <script src="script-1.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
