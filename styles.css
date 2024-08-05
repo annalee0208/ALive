@@ -1,10 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 .control-icon {
     position: fixed; 
     bottom: 8%;
     right: 10%;
     width: 50px; 
     height: 50px; 
-
     background-color: #fff;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -31,12 +34,16 @@
     z-index: 10; /* 로고가 다른 요소들 위에 표시되도록 설정 */
 }
 
+#quiz-image {
+    width: 100%;
+    object-fit: fill; /* 비율을 유지하면서 전체 이미지를 표시 */
+}
+
 #logo img {
     width: auto; /* 로고 이미지의 너비를 50px로 설정 */
     height: 30px; /* 높이를 자동으로 조절하여 비율을 유지 */
     max-width: 100%; /* 최대 너비를 100%로 설정하여 화면을 넘지 않도록 함 */
 }
-
 
 .top-center-container {
     width: 100%;
@@ -60,7 +67,6 @@
     width: 105%;
     text-align: center;
     margin-top: 2px; 
-
     transform: translate(-5%, 0%);
 }
 
@@ -76,24 +82,11 @@
 #step4 {transform:translate(21%, 0%);}
 #step5 {transform:translate(28%, 0%);}
 
-
-/* 
-.steps {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 600px;
-} */
-  
-
-
 html, body {
     font-family: "Noto Sans KR", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-
     height: 100%;
     margin: 0;
     padding: 0;
@@ -135,17 +128,17 @@ body{
     grid-row: 2 / 3;
 }
 
-#quiz-image, #webcam-container{
+#quiz-image, #webcam-container {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* 비율을 유지하면서 전체 이미지를 표시 */
 }
 
 .progress-container {
     width: 100%;
     max-width: 500px;
     margin-top: 18px;
-  }
+}
   
 h3 {
     font-size: 16px;
@@ -165,10 +158,10 @@ h3 {
     width: 0%;
     height: 100%;
     background-color: #4CAF50;
-    transition: width 0.2s ease-in-out;
+    transition: width 0s ease-in-out;
 }
 
-#label-container{
+#label-container {
     margin-top: 50px;
     position: fixed; 
     font-weight: 500;
@@ -176,13 +169,13 @@ h3 {
     left: 10%;
 }
 
-#play-img{
+#play-img {
     width: 20px;
     height: auto;
     margin-left: 5px;
 }
 
-#webcam-container {
+#webcam-container, #explain-image {
     width: 100%; /* 웹캠 컨테이너 너비를 패널 너비에 맞게 조정 */
     height: 100%; /* 웹캠 컨테이너 높이를 패널 높이에 맞게 조정 */
 }

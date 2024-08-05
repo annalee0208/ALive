@@ -45,10 +45,11 @@ function addMessage(message) {
 document.getElementById('controlButton').addEventListener('click', function() {
     const pCon = document.querySelector(".pause-container");
     const playControl = document.querySelector(".play-container")
+
     if (isPlaying) {
         webcam.pause();  // 웹캠 일시 정지
         pCon.style.display = "none";
-        playControl.style.display = "box";
+        playControl.style.display = "flex";
         // this.textContent = '다 시 시 작';  // 버튼 텍스트 변경
         isPlaying = false;  // 플래그 업데이트
     } else {
@@ -63,12 +64,14 @@ document.getElementById('controlButton').addEventListener('click', function() {
 async function init() {
     const modelURL = 'https://teachablemachine.withgoogle.com/models/phUDOoA0Y/model.json';
     const metadataURL = 'https://teachablemachine.withgoogle.com/models/phUDOoA0Y/metadata.json';
+    const rightPanel = document.getElementById('right-panel');
 
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
 
     const flip = true;
-    webcam = new tmImage.Webcam(323, 323, flip);
+    // webcam = new tmImage.Webcam(323, 323, flip);
+    const webcam = new tmImage.Webcam(rightPanel.clientWidth, rightPanel.clientHeight, flip);
     await webcam.setup();
     await webcam.play();
     window.requestAnimationFrame(loop);
