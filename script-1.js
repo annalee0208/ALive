@@ -64,14 +64,12 @@ document.getElementById('controlButton').addEventListener('click', function() {
 async function init() {
     const modelURL = 'https://teachablemachine.withgoogle.com/models/phUDOoA0Y/model.json';
     const metadataURL = 'https://teachablemachine.withgoogle.com/models/phUDOoA0Y/metadata.json';
-    const rightPanel = document.getElementById('right-panel');
 
     model = await tmImage.load(modelURL, metadataURL);
     maxPredictions = model.getTotalClasses();
 
     const flip = true;
-    // webcam = new tmImage.Webcam(323, 323, flip);
-    const webcam = new tmImage.Webcam(rightPanel.clientWidth, rightPanel.clientHeight, flip);
+    webcam = new tmImage.Webcam(323, 323, flip);
     await webcam.setup();
     await webcam.play();
     window.requestAnimationFrame(loop);
