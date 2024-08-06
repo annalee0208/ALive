@@ -21,15 +21,15 @@ async function predict() {
             console.log("Class 0 probability: ", probability);  // 확률 로깅
             setProgress(probability*100);
             if (probability >= 0.95) {
-                addMessage(" 완 벽 합 니 다.");
+                addMessage(" 완벽합니다.");
             } else if (probability >= 0.8) {
-                addMessage(" 하 나 만  더  찾 으 세 요");
+                addMessage(" 하나만 더 찾으세요");
             } else if (probability >= 0.6) {
-                addMessage(" 거 의  다  왔 어 요");
+                addMessage(" 거의 다 왔어요");
             } else if (probability >= 0.4) {
-                addMessage(" 조 금 만  더  생 각 해 봐 요");
+                addMessage(" 조금만 더 생각해봐요");
             } else if (probability >= 0.2) {
-                addMessage(" 분 발 하 셔 야  합 니 다");
+                addMessage(" 분발하셔야 합니다");
             }
         }
     }
